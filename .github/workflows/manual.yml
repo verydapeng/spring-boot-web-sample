@@ -27,7 +27,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: wget '${{ github.event.inputs.name }}'
+      run: curl -JLO '${{ github.event.inputs.name }}'
     - name: archive
       uses: actions/upload-artifact@v2
       with:
