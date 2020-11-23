@@ -30,7 +30,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: download with name
-      run: curl -L '${{ github.event.inputs.url }}' -O '${{ github.event.inputs.filename }}'
+      run: curl '${{ github.event.inputs.url }}' -O '${{ github.event.inputs.filename }}'
     - name: archive
       uses: actions/upload-artifact@v2
       with:
