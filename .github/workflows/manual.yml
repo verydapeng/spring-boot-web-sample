@@ -30,11 +30,11 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: download
-      if: ${{ github.event.inputs.name == '' }}
+      if: ${{ github.event.inputs.filename == '' }}
       run: curl -JLO '${{ github.event.inputs.url }}'
     - name: download with name
-      if: ${{ github.event.inputs.name }}
-      run: curl -JL '${{ github.event.inputs.url }}' -O '${{ github.event.inputs.name }}'
+      if: ${{ github.event.inputs.filename }}
+      run: curl -JL '${{ github.event.inputs.url }}' -O '${{ github.event.inputs.filename }}'
     - name: archive
       uses: actions/upload-artifact@v2
       with:
