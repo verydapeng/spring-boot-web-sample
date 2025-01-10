@@ -32,7 +32,7 @@ jobs:
     - name: download with name
       run: curl -L '${{ github.event.inputs.url }}' -o '${{ github.event.inputs.filename }}'
     - name: archive
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: archive
         path: .
